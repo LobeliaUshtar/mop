@@ -58,3 +58,8 @@ group :test do
   gem 'shoulda-matchers'
   gem "capybara"
 end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
