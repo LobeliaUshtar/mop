@@ -1,4 +1,4 @@
-<h1><%= pluralize(@events.size, 'Events') %></h1>
+<h1><%= pluralize(@events.size, 'Event') %></h1>
 
 <% @events.each do |event| %>
   <article>
@@ -8,11 +8,9 @@
     <p>
       <%= truncate(event.details, length: 40, separator: ' ') %>
     </p>
-    <table>
-      <tr>
-        <th>Happening:</th>
-        <td><%= event.date_start %> through <%= event.date_end %></td>
-      </tr>
-    </table>
+    <h4>Happening:</h4>
+    <p>
+       <%= event.date_start %> through <%= event.date_end %>
+    </p>
   </article>
 <% end %>

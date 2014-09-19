@@ -2,7 +2,6 @@
   <header>
     <h1><%= @event.title %></h1>
   </header>
-  <h2>Details</h2>
   <p>
     <%= @event.details %>
   </p>
@@ -10,6 +9,9 @@
   <p>
     <%= @event.date_start %> through <%= @event.date_end %>
   </p>
-
-  <%= link_to "All Events", events_path %>
+  <nav>
+    <%= link_to "All Events", events_path, class: 'btn btn-info' %>
+    <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-warning' %>
+    <!-- <%= link_to('Delete', @event, class: 'btn btn-danger btn-small', method: :delete, data: {confirm: 'Are you sure?'}, path: root_path) %> -->
+</nav>
 </article>
