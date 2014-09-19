@@ -10,7 +10,7 @@
     <%= @event.date_start %> through <%= @event.date_end %>
   </p>
   <nav>
-    <%= link_to "All Events", events_path, class: 'btn btn-info' %>
+    <%= link_to "All Events", events_path, class: 'btn btn-primary' %>
     <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-warning' %>
     <!-- <%= link_to('Delete', @event, class: 'btn btn-danger btn-small', method: :delete, data: {confirm: 'Are you sure?'}, path: root_path) %> -->
 </nav>
