@@ -3,26 +3,9 @@ require 'rails_helper'
 describe "Viewing the list of events" do
   
   it "shows the events" do
-    event1 = Event.create(
-                          title: "Event 1",
-                          date_start: "2014/10/24",
-                          date_end: "2014/10/24",
-                          details: "this is test event 1"
-                          )
-
-    event2 = Event.create(
-                          title: "Event 2",
-                          date_start: "2014/10/24",
-                          date_end: "2014/10/24",
-                          details: "this is test event 2"
-                          )
-
-    event3 = Event.create(
-                          title: "Event 3",
-                          date_start: "2014/10/24",
-                          date_end: "2014/10/24",
-                          details: "this is test event 3"
-                          )
+    event1 = Event.create(event_attributes)
+    event2 = Event.create(event_attributes)
+    event3 = Event.create(event_attributes)
 
     visit events_url
 
