@@ -1,8 +1,8 @@
 def event_attributes(overrides = {})
   {
-    title: "Event",
-    date_start: "2014/10/24",
-    date_end: "2014/10/24",
+    title: "Test",
+    date_start: 1.day.from_now,
+    date_end: 2.day.from_now,
     details: "this is test event"
   }.merge(overrides)
 end

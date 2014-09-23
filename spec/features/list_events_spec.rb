@@ -18,5 +18,11 @@ describe "Viewing the list of events" do
     expect(page).to have_text(event1.date_end)
     expect(page).to have_text(event1.details[0..10])
   end
-  
+
+  it "does not show an event that is over" do
+    event = Event.create(event_attributes(date_start: 3.days.ago, date_end: 2.days.ago))
+    visit events_path
+    expect(page).not_to have_text(event.title)
+  end
+
 end
