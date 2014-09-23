@@ -56,7 +56,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
-  gem "capybara"
+  gem "capybara", "2.4.1"
 end
 
 group :production do
