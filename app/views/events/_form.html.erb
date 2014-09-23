@@ -5,9 +5,7 @@
     <%= f.date_field :date_start %>
     <%= f.date_field :date_end %>
     <%= f.text_area :details, cols: 50, rows: 2 %>
-    <p>
-      <%= f.submit(class: 'btn btn-success') %>
-      <%= link_to "Cancel", events_path, class: 'btn btn-warning' %>
-    </p>
+    <%= f.submit(class: 'btn btn-success') %>
+    <%= link_to "Cancel", events_path, class: 'btn btn-warning' %>
   </fieldset>
 <% end %>

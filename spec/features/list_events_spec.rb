@@ -24,5 +24,4 @@ describe "Viewing the list of events" do
     visit events_path
     expect(page).not_to have_text(event.title)
   end
-
 end

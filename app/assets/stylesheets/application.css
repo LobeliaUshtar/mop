@@ -48,10 +48,8 @@ html, body {
 }
 
 #content {
-  padding-top: 10px;
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom:10px;
 }
 
 #footer {
@@ -65,4 +63,9 @@ html, body {
   font-size: 1em;
   font-family: Verdana;
   background-color: #B22222;
+}
+
+#aside {
+   float: right;
+   width: 200px;
 }
