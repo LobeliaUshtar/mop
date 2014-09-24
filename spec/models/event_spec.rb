@@ -1,10 +1,33 @@
 require 'rails_helper'
 
 describe "An event" do
-  it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:date_start) }
-  it { should validate_presence_of(:date_end) }
-  it { should validate_presence_of(:details) }
+  it "requires a title" do
+    event = Event.new(title: "")
+    
+    expect(event.valid?).to be_falsey
+    expect(event.errors[:title].any?).to be_truthy
+  end
+
+  it "requires a start date" do
+    event = Event.new(date_start: "")
+    
+    expect(event.valid?).to be_falsey
+    expect(event.errors[:date_start].any?).to be_truthy
+  end
+
+  it "requires an end date" do
+    event = Event.new(date_end: "")
+    
+    expect(event.valid?).to be_falsey
+    expect(event.errors[:date_end].any?).to be_truthy
+  end
+
+  it "requires details" do
+    event = Event.new(details: "")
+    
+    expect(event.valid?).to be_falsey
+    expect(event.errors[:details].any?).to be_truthy
+  end
 
   it "is over when the end date is in the past" do
     event = Event.create(event_attributes(date_end: 3.months.ago))
@@ -20,3 +43,5 @@ describe "An event" do
     expect(Event.current_upcoming).to eq([event3, event1, event2])
   end
 end
+
+  

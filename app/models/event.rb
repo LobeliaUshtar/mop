@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :title, :date_start, :date_end, :details
+  validates :title, :date_start, :date_end, :details, presence: true
+  validates :details, length: { minimum: 25 }
 
   def self.ended
      where("date_end < ?", Time.now).order("date_start asc")

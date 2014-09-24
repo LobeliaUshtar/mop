@@ -26,5 +26,18 @@ describe "Creating a new event" do
     expect(current_path).to eq(event_path(Event.last))
     
     expect(page).to have_text('New Title')
+
+    expect(page).to have_text('Event successfully created!')
+  end
+
+  it "does not save the event if it's invalid" do
+    visit new_event_url
+    
+    expect { 
+      click_button 'Create Event' 
+    }.not_to change(Event, :count)
+    
+    expect(current_path).to eq(events_path)   
+    expect(page).to have_text('error')
   end
 end
