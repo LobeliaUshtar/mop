@@ -45,13 +45,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 
-group :development do
-  gem 'sqlite3'
-end
-
 group :test, :development do
   gem "minitest"
   gem "rspec-rails"
+  gem 'sqlite3'
 end
 
 group :test do

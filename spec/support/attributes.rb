@@ -6,3 +6,14 @@ def event_attributes(overrides = {})
     details: "testing, test, test, test, test"
   }.merge(overrides)
 end
+
+def user_attributes(overrides = {})
+  {
+    name: "Example User",
+    email: "user@example.com",
+    password: "secret",
+    password_confirmation: "secret",
+    address: "123 ABC Street, ZYX, NJ, 55555",
+    phone: "555-555-5555"
+  }.merge(overrides)
+end
