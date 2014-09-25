@@ -1,0 +1,12 @@
+<header>
+  <h1>Sign In</h1>
+</header>
+
+<%= bootstrap_form_tag url: signin_path do |f| %>
+  <fieldset>
+    <%= f.email_field :email, autofocus: true  %>
+    <%= f.password_field :password %>
+  </fieldset>
+  <%= f.submit "Sign In", class: 'btn btn-success' %>
+  No account yet? <%= link_to 'Sign up', signup_path %>!
+<% end %>
