@@ -1,13 +1,17 @@
 require 'rails_helper'
 
 describe "Editing an event" do
+  before do
+    admin = User.create!(user_attributes(admin: true))
+    sign_in(admin)
+  end
   
   it "updates the event and shows the event's updated details" do
     event = Event.create(event_attributes)
     
     visit event_url(event)
     
-    click_link 'Edit'
+    click_link 'Edit Event'
     
     expect(current_path).to eq(edit_event_path(event))
         

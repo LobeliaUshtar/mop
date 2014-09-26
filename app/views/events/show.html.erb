@@ -10,7 +10,9 @@
     <%= @event.date_start %> through <%= @event.date_end %>
   </p>
   <nav>
-    <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-warning' %>
-    <%= link_to "Delete Account", event_path(@event), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+    <% if current_user_admin? %>
+      <%= link_to "Edit Event", edit_event_path(@event), class: 'btn btn-warning' %>
+      <%= link_to "Delete Event", event_path(@event), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+    <% end %>
   </nav>
 </article>

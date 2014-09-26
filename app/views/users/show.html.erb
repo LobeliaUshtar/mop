@@ -4,7 +4,9 @@
     <h2><%= mail_to(@user.email) %></h2>
   </header>
 <!--   <nav>
-    <%= link_to "Edit Account", edit_user_path(@user), class: 'btn btn-warning' %>
-    <%= link_to "Delete Account", user_path(@user), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if current_user_admin? %>
+      <%= link_to "Edit This User", edit_user_path(@user), class: 'btn btn-warning' %>
+      <%= link_to "Delete This User", user_path(@user), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </nav> -->
 </article>

@@ -7,6 +7,9 @@
     <%= f.password_field :password_confirmation, label: "Confirm Password" %>
     <%= f.text_field :address %>
     <%= f.text_field :phone, label: "Phone Number" %>
+    <% if current_user_admin? %>
+      <%= f.check_box :admin, label: 'Admin?' %>
+    <% end %>
     <% if @user.new_record? %>
       <%= f.submit "Create Account", class: 'btn btn-success' %>
     <% else %>

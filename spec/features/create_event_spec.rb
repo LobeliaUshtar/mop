@@ -1,6 +1,11 @@
 require 'rails_helper'
 
-describe "Creating a new event" do 
+describe "Creating a new event" do
+  before do
+    admin = User.create!(user_attributes(admin: true))
+    sign_in(admin)
+  end
+  
   it "first opens the new event page" do
     visit events_url
     
