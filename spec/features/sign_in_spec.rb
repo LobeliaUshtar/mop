@@ -5,7 +5,7 @@ describe "Signing in" do
   it "prompts for an email and password" do
     visit root_url
 
-    click_link 'Sign In'
+    click_link 'Volunteer Sign In'
 
     expect(current_path).to eq(signin_path)
 
@@ -18,7 +18,7 @@ describe "Signing in" do
 
     visit root_url
 
-    click_link 'Sign In'
+    click_link 'Volunteer Sign In'
 
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
@@ -30,8 +30,8 @@ describe "Signing in" do
     expect(page).to have_text("Welcome back, #{user.name}!")
 
     expect(page).to have_text(user.name)
-    expect(page).not_to have_link('Sign In')
-    expect(page).not_to have_link('Sign Up')
+    expect(page).not_to have_link('Volunteer Sign In')
+    expect(page).not_to have_link('Become a Volunteer')
     expect(page).to have_link('Sign Out')
   end
 
@@ -40,7 +40,7 @@ describe "Signing in" do
 
     visit root_url
 
-    click_link 'Sign In'
+    click_link 'Volunteer Sign In'
 
     fill_in "Email", with: user.email
     fill_in "Password", with: "no match"
@@ -50,8 +50,8 @@ describe "Signing in" do
     expect(page).to have_text('Invalid')
 
     expect(page).not_to have_text(user.name)
-    expect(page).to have_link('Sign In')
-    expect(page).to have_link('Sign Up')
+    expect(page).to have_link('Volunteer Sign In')
+    expect(page).to have_link('Become a Volunteer')
     expect(page).not_to have_link('Sign Out')
   end
 

@@ -1,5 +1,6 @@
-Mount Olive Pantry {site still in the works}
-<div align='center'>
+<div>
+  <div class='col-md-9'>Mount Olive Pantry {site still in the works}</div>
+  
   <% if current_user %>
     <div class="btn-group">
       <button type="button" class="btn btn-info">
@@ -17,8 +18,8 @@ Mount Olive Pantry {site still in the works}
       </ul>
     </div>
   <% else %>
-    <%= link_to 'Sign Up', signup_path, class: 'btn btn-primary' %>
-    <%= link_to 'Sign In', signin_path, class: 'btn btn-primary' %>
+    <%= link_to 'Become a Volunteer', signup_path, class: 'btn btn-primary' %>
+    <%= link_to 'Volunteer Sign In', signin_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
     

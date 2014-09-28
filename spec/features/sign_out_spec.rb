@@ -11,7 +11,7 @@ describe "Signing out" do
 
     expect(page).to have_text("signed out")
     expect(page).not_to have_link('Sign Out')
-    expect(page).to have_link('Sign In')
+    expect(page).to have_link('Volunteer Sign In')
   end
 
 end

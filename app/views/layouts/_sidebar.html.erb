@@ -1,15 +1,21 @@
 <div class='well'>
-  <ul>
-    <li>
-      <%= link_to 'All Events', events_path %>
-    </li>
-    <% if current_user_admin? %>
-      <li>
-        <%= link_to "Add New Event", new_event_path %>
-      </li>
-      <li>
-        <%= link_to "All Users", users_path %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="panel panel-warning">
+    <div class="panel-heading">Events</div>
+    <div class="panel-body">
+      <p><%= link_to 'All Events', events_path %></p>
+      <% if current_user_admin? %>
+        <p><%= link_to "Add New Event", new_event_path %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <% if current_user_admin? %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">Users</div>
+      <div class="panel-body">
+        <p><%= link_to "All Users", users_path %></p>
+        <p><%= link_to "Add New User", new_user_path %></p>
+      </div>
+    </div>
+  <% end %>
 </div>

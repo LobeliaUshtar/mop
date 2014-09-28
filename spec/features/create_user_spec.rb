@@ -4,7 +4,7 @@ describe "Creating a new user" do
   it "saves the user and shows the user's profile page" do    
     visit root_url
 
-    click_link 'Sign Up'
+    click_link 'Become a Volunteer'
 
     expect(current_path).to eq(signup_path)
 
@@ -22,8 +22,8 @@ describe "Creating a new user" do
     expect(page).to have_text('Example User')
     expect(page).to have_text('Thanks for signing up!')
 
-    expect(page).not_to have_link('Sign In')
-    expect(page).not_to have_link('Sign Up')
+    expect(page).not_to have_link('Volunteer Sign In')
+    expect(page).not_to have_link('Become a Volunteer')
   end
 
   it "does not save the user if it's invalid" do
