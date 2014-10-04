@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :users
     get 'signup' => 'users#new'
 
-  resource :session
+  resources :sessions
     get 'signin' => 'sessions#new'
     post 'signin' => 'sessions#create'
+
+  resources :items
 end

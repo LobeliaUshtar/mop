@@ -17,3 +17,13 @@ def user_attributes(overrides = {})
     phone: "555-555-5555"
   }.merge(overrides)
 end
+
+def item_attributes(overrides = {})
+  {
+    name: "tomatoes",
+    variety: "diced",
+    category: "tomato",
+    count: "50",
+    shop: "3"
+    }.merge(overrides)
+end

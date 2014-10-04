@@ -1,0 +1,16 @@
+<%= bootstrap_form_for(@item) do |f| %>
+  <%= render "shared/errors", object: @item %>
+  <fieldset>
+    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :variety %>
+    <%= f.text_field :category %>
+    <%= f.number_field :count %>
+    <%= f.number_field :shop %>
+    <% if @item.new_record? %>
+      <%= f.submit "Create", class: 'btn btn-success' %>
+    <% else %>
+      <%= f.submit "Update", class: 'btn btn-success' %>
+    <% end %>
+    <%= link_to "Cancel", inventory_path, class: 'btn btn-warning' %>
+  </fieldset>
+<% end %>
