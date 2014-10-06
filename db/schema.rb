@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001165028) do
+ActiveRecord::Schema.define(version: 20141006162843) do
+
+  create_table "donators", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.text     "description"
+    t.string   "logo_file_name"
+    t.boolean  "current",           default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "title"

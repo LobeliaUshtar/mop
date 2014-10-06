@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     post 'signin' => 'sessions#create'
 
   resources :items
+
+  resources :donators
 end

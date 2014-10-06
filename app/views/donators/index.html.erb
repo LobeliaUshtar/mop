@@ -1,0 +1,16 @@
+<h1>Our wonderful donators...</h1>
+
+<% @donators.each do |donator| %>
+  <article>
+    <header>
+      <%= image_for(donator) %>
+      <h2><%= link_to donator.name, donator %></h2>
+    </header>
+    <p>
+      <a href="<%= donator.website%>" target="_blank"><%= donator.website%></a>
+    </p>
+    <p>
+      <%= truncate(donator.details, length: 25, separator: ' ') %>
+    </p>
+  </article>
+<% end %>
