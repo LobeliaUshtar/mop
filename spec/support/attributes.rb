@@ -14,7 +14,8 @@ def user_attributes(overrides = {})
     password: "secret",
     password_confirmation: "secret",
     address: "123 ABC Street, ZYX, NJ, 55555",
-    phone: "555-555-5555"
+    phone: "555-555-5555",
+    admin: false
   }.merge(overrides)
 end
 
@@ -25,5 +26,15 @@ def item_attributes(overrides = {})
     category: "tomato",
     count: "50",
     shop: "3"
-    }.merge(overrides)
+  }.merge(overrides)
+end
+
+def donator_attributes(overrides ={})
+  {
+    name: "Gabby's Bagels",
+    website: "www.gabby.com",
+    description: "blah blah blah blah blah",
+    logo_file_name: "gabby.gif",
+    current: true
+  }.merge(overrides)
 end

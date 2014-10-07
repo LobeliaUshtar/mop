@@ -1,10 +1,10 @@
 <%= bootstrap_form_for(@event) do |f| %>
   <%= render "shared/errors", object: @event %>
   <fieldset>
-    <%= f.text_field :title, size: 50, autofocus: true %>
+    <%= f.text_field :title, autofocus: true %>
     <%= f.date_field :date_start %>
     <%= f.date_field :date_end %>
-    <%= f.text_area :details, cols: 50, rows: 2 %>
+    <%= f.text_area :details, rows: 2 %>
     <%= f.submit(class: 'btn btn-success') %>
     <%= link_to "Cancel", events_path, class: 'btn btn-warning' %>
   </fieldset>
