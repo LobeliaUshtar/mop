@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 20141006162843) do
   create_table "donators", force: true do |t|
     t.string   "name"
     t.string   "website"
+    t.string   "address"
+    t.string   "phone"
     t.text     "description"
     t.string   "logo_file_name"
-    t.boolean  "current",           default: true
+    t.boolean  "current",        default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

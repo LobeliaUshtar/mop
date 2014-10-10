@@ -14,8 +14,8 @@ describe "Creating a new event" do
     expect(current_path).to eq(new_event_path)
   end
 
-=begin
-  it "saves the event and shows the new event's details" do    
+
+  it "saves the event and shows its details" do    
     visit events_url
     
     click_link 'Add New Event'
@@ -35,9 +35,7 @@ describe "Creating a new event" do
 
     expect(page).to have_text('Event successfully created!')
   end
-=end
 
-=begin
   it "does not save the event if it's invalid" do
     visit new_event_url
     
@@ -48,6 +46,4 @@ describe "Creating a new event" do
     expect(current_path).to eq(events_path)   
     expect(page).to have_text('error')
   end
-=end
-
 end

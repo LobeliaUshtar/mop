@@ -1,0 +1,24 @@
+<article>
+  <header>
+    <%= image_for(@donator) %>
+    <h1><%= @donator.name %></h1>
+  </header>
+  <p>
+    <a href="<%= @donator.website %>" target="_blank"><%= @donator.website %></a>
+  </p>
+  <p>
+    <%= @donator.description %>
+  </p>
+  <p>
+    <%= @donator.address %>
+  </p>
+  <p>
+    <%= @donator.phone %>
+  </p>
+  <nav>
+    <% if current_user_admin? %>
+      <%= link_to "Edit Donator", edit_donator_path(@donator), class: 'btn btn-warning' %>
+      <%= link_to "Delete Donator", donator_path(@donator), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+    <% end %>
+  </nav>
+</article>

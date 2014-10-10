@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "View an individual events" do
+describe "View a specific event" do
   it "shows the event's details" do
     event = Event.create(event_attributes)
 

@@ -35,6 +35,8 @@ def donator_attributes(overrides ={})
     website: "www.gabby.com",
     description: "blah blah blah blah blah",
     logo_file_name: "gabby.gif",
+    address: "123 456 Avenue, Budd Lake, NJ 07828",
+    phone: "555-555-5555",
     current: true
   }.merge(overrides)
 end

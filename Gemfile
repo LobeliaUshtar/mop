@@ -44,6 +44,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :test, :development do
   gem "minitest"
