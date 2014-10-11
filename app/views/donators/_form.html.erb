@@ -3,14 +3,16 @@
   <fieldset>
     <%= f.text_field :name, autofocus: true %>
     <%= f.text_field :website %>
-    <%= f.text_area :description, rows: 2 %>
+    <%= f.email_field :email %>
+    <%= f.text_field :donation %>
+    <%= f.text_area :description, rows: 3 %>
     <%= f.text_field :address %>
     <%= f.text_field :phone %>
-    <%= f.text_field :logo_file_name, placeholder: "GIF, JPG, or PNG file name" %>
+    <%= f.text_field :logo_link, placeholder: "GIF, JPG, or PNG file name" %>
     <% if current_user_admin? %>
       <%= f.check_box :current, label: 'Current Donator?' %>
     <% end %>
     <%= f.submit(class: 'btn btn-success') %>
-    <%= link_to "Cancel", users_path, class: 'btn btn-warning' %>
+    <%= link_to "Cancel", donators_path, class: 'btn btn-warning' %>
   </fieldset>
 <% end %>

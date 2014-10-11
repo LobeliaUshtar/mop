@@ -1,19 +1,28 @@
 <article>
-  <header>
+  <header align="center">
     <%= image_for(@donator) %>
     <h1><%= @donator.name %></h1>
+    <p>
+      <a href="<%= @donator.website %>" target="_blank"><%= @donator.website %></a>
+    </p>
+    <p>
+      <%= @donator.address %>
+    </p>
+    <p>
+      <%= @donator.phone %>
+    </p>
+    <p>
+      <%= mail_to(@donator.email) %>
+    </p>
   </header>
-  <p>
-    <a href="<%= @donator.website %>" target="_blank"><%= @donator.website %></a>
-  </p>
+  <br>
   <p>
     <%= @donator.description %>
   </p>
-  <p>
-    <%= @donator.address %>
-  </p>
-  <p>
-    <%= @donator.phone %>
+  <br>
+  <h4>What they have given to us to share...</h4>
+  <p class="indent">
+    ~ <%= @donator.donation %>
   </p>
   <nav>
     <% if current_user_admin? %>

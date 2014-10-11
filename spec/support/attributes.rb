@@ -33,10 +33,13 @@ def donator_attributes(overrides ={})
   {
     name: "Gabby's Bagels",
     website: "www.gabby.com",
+    email: "gabby@example.com",
     description: "blah blah blah blah blah",
-    logo_file_name: "gabby.gif",
+    donation: "doggy bagel cookies",
+    logo_link: "gabby.gif",
     address: "123 456 Avenue, Budd Lake, NJ 07828",
     phone: "555-555-5555",
+    hours: "12am - 12pm",
     current: true
   }.merge(overrides)
 end

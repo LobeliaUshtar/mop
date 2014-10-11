@@ -9,14 +9,14 @@ describe "Viewing the list of donators" do
 
     visit donators_url
 
-    expect(page).to have_text("Our wonderful donators...")
+    expect(page).to have_text("Our wonderfully generous donators...")
     expect(page).to have_text(donator1.name)
     expect(page).to have_text(donator2.name)
     expect(page).to have_text(donator3.name)
 
     expect(page).to have_text(donator1.website)
-    expect(page).to have_text(donator1.description)
-    expect(page).to have_selector("img[src$='#{donator1.logo_file_name}']")
+    expect(page).to have_text(donator1.donation)
+    expect(page).to have_selector("img[src$='#{donator1.logo_link}']")
   end
 
 =begin

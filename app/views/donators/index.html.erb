@@ -1,4 +1,4 @@
-<h1>Our wonderful donators...</h1>
+<h1>Our wonderfully generous donators...</h1>
 
 <% @donators.each do |donator| %>
   <article>
@@ -9,8 +9,10 @@
     <p>
       <a href="<%= donator.website%>" target="_blank"><%= donator.website%></a>
     </p>
-    <p>
-      <%= truncate(donator.description, length: 25, separator: ' ') %>
+    <h4>What they have given to us to share...</h4>
+    <p class="indent">
+      ~ <%= donator.donation %>
     </p>
+    <br><br>
   </article>
 <% end %>
