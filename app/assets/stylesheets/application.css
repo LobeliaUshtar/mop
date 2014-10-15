@@ -16,7 +16,7 @@
  *= require_tree .
  *= require events
  *= require users
- *= require items
+ *= require inventories
  *= require donators
 */
 

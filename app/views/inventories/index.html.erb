@@ -1,0 +1,10 @@
+<h1>Our current inventory...</h1>
+
+<% @inventories.each do |inventory| %>
+  <article>
+    <header>
+      <h2><%= link_to inventory.name, inventory %></h2>
+    </header>
+    <p>Current Count: <%= inventory.count %></p>
+  </article>
+<% end %> 

@@ -19,13 +19,11 @@ def user_attributes(overrides = {})
   }.merge(overrides)
 end
 
-def item_attributes(overrides = {})
+def inventory_attributes(overrides = {})
   {
     name: "tomatoes",
-    variety: "diced",
-    category: "tomato",
-    count: "50",
-    shop: "3"
+    count: 50,
+    shop: 3
   }.merge(overrides)
 end
 
