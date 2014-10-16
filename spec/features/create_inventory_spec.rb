@@ -4,6 +4,7 @@ describe "Creating a new inventory" do
   before do
     @category1 = Category.create!(name: "category 1")
     @category2 = Category.create!(name: "category 2")
+    @inventory = Inventory.create!(inventory_attributes)
     admin = User.create!(user_attributes(admin: true))
     sign_in(admin)
   end
@@ -26,7 +27,7 @@ describe "Creating a new inventory" do
     
     fill_in "Name", with: "New Name"
     fill_in "Count", with: 30
-    fill_in "Shop", with: 3
+    choose(@inventory.shop)
     choose(@category1.name)
      
     click_button 'Create'
