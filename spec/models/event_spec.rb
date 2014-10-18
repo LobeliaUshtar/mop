@@ -40,7 +40,7 @@ describe "An event" do
     event2 = Event.create(event_attributes(date_start: 2.week.from_now))
     event3 = Event.create(event_attributes(date_end: 1.day.from_now))
 
-    expect(Event.current_upcoming).to eq([event3, event1, event2])
+    expect(Event.upcoming).to eq([event3, event1, event2])
   end
 end
 

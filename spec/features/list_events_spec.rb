@@ -20,8 +20,10 @@ describe "Viewing the list of events" do
   end
 
   it "does not show an event that is over" do
-    event = Event.create(event_attributes(date_start: 3.days.ago, date_end: 2.days.ago))
-    visit events_path
+    event = Event.create(event_attributes(date_start: 3.weeks.ago, date_end: 2.weeks.ago))
+
+    visit events_url
+
     expect(page).not_to have_text(event.title)
   end
 end

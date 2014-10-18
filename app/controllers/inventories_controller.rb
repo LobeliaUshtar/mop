@@ -3,7 +3,7 @@ class InventoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.low
   end
 
   def show

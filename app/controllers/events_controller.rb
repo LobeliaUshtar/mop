@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
-    @events = Event.current_upcoming
+    @events = Event.upcoming
   end
 
   def show

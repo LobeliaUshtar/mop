@@ -22,7 +22,7 @@ end
 def inventory_attributes(overrides = {})
   {
     name: "tomatoes",
-    count: 50,
+    count: 10,
     shop: 3
   }.merge(overrides)
 end

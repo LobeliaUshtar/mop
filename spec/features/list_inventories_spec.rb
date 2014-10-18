@@ -17,4 +17,12 @@ describe "Viewing the list of inventories" do
     expect(page).to have_text(inventory1.count)
     expect(page).to have_text(inventory1.shop)
   end
+
+  it "does not show an inventory that is over a 10 count " do
+      inventory = Inventory.create(inventory_attributes(count: 50))
+
+      visit inventories_url
+
+      expect(page).not_to have_text(inventory.name)
+  end
 end

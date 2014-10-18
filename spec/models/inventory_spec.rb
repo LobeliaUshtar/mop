@@ -25,25 +25,18 @@ describe "An inventory" do
     end
   end
   
-=begin
-  context "recent query" do
+  context "low query" do
     before do
-      @movie1 = Movie.create(movie_attributes(released_on: 3.months.ago))
-      @movie2 = Movie.create(movie_attributes(released_on: 2.months.ago))
-      @movie3 = Movie.create(movie_attributes(released_on: 1.months.ago))
-      @movie4 = Movie.create(movie_attributes(released_on: 1.week.ago))
-      @movie5 = Movie.create(movie_attributes(released_on: 1.day.ago))
-      @movie6 = Movie.create(movie_attributes(released_on: 1.hour.ago))
-      @movie7 = Movie.create(movie_attributes(released_on: 1.day.from_now))
+      @inventory1 = Inventory.create(inventory_attributes(count: 5))
+      @inventory2 = Inventory.create(inventory_attributes(count: 20))
+      @inventory3 = Inventory.create(inventory_attributes(count: 1))
+      @inventory4 = Inventory.create(inventory_attributes(count: 50))
+      @inventory5 = Inventory.create(inventory_attributes(count: 1))
+      @inventory6 = Inventory.create(inventory_attributes(count: 100))
     end
 
-    it "returns a specified number of released movies ordered with the most recent movie first" do
-      expect(Movie.recent(2)).to eq([@movie6, @movie5])
-    end
-
-    it "returns a default of 5 released movies ordered with the most recent movie first" do
-      expect(Movie.recent).to eq([@movie6, @movie5, @movie4, @movie3, @movie2])
+    it "returns all inventory items with a count equal to or below 10" do
+      expect(Inventory.low).to eq([@inventory1, @inventory3, @inventory5])
     end
   end
-=end
 end

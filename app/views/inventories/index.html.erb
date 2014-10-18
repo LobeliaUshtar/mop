@@ -1,9 +1,10 @@
-<h1>Our current inventory...</h1>
+<h1>Our current inventory needs...</h1>
+<h2>These are all the items we are running low on.  If you are thinking of making a non-monetary donation, please consider picking up these items first.  Thank you.</h2>
 
 <% @inventories.each do |inventory| %>
   <article>
     <header>
-      <h2><%= link_to inventory.name, inventory %></h2>
+      <h3><%= link_to inventory.name, inventory %></h3>
     </header>
     <p>Current Count: <%= inventory.count %></p>
   </article>
