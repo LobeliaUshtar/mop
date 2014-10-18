@@ -7,7 +7,7 @@
       <p><%= link_to "Entire Inventory", filtered_inventories_path(:all) %></p>
       <% if current_user_admin? %>
         <p><%= link_to "Add New Inventory", new_inventory_path %></p>
-        <p><%= link_to "Categories", categories_path %></p>
+        <p><%= link_to "Category List", categories_path %></p>
       <% end %>
     </div>
   </div>
@@ -25,8 +25,10 @@
   <div class="panel panel-warning">
     <div class="panel-heading">Donators</div>
     <div class="panel-body">
-      <p><%= link_to 'All Donators', donators_path %></p>
+      <p><%= link_to 'Our Donators', donators_path %></p>
       <% if current_user_admin? %>
+        <p><%= link_to "All Recorded Donators", filtered_donators_path(:all) %></p>
+        <p><%= link_to "Former Donators", filtered_donators_path(:former) %></p>
         <p><%= link_to "Add New Donator", new_donator_path %></p>
       <% end %>
     </div>

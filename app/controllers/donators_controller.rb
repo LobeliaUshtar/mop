@@ -1,6 +1,13 @@
 class DonatorsController < ApplicationController
   def index
-    @donators = Donator.all
+    case params[:filter]
+    when 'former'
+      @donators = Donator.former_donator
+    when 'all'
+      @donators = Donator.all
+    else
+      @donators = Donator.current_donator
+    end
   end
 
   def show
