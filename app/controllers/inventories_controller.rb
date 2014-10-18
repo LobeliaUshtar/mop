@@ -3,7 +3,13 @@ class InventoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   
   def index
-    @inventories = Inventory.low
+    case params[:filter]
+    when 'all'
+      @inventories = Inventory.all
+    else
+      @inventories = Inventory.low
+    end
+    
   end
 
   def show

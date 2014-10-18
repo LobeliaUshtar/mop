@@ -4,6 +4,7 @@
     <div class="panel-heading">Inventory</div>
     <div class="panel-body">
       <p><%= link_to 'What We Need Most', inventories_path %></p>
+      <p><%= link_to "Entire Inventory", filtered_inventories_path(:all) %></p>
       <% if current_user_admin? %>
         <p><%= link_to "Add New Inventory", new_inventory_path %></p>
         <p><%= link_to "Categories", categories_path %></p>

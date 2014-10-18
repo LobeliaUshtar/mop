@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "events#index"
+  root "inventories#index"
+
+  resources :inventories
+    get 'inventories/filter/:filter' => 'inventories#index', as: :filtered_inventories
 
   resources :events
 
@@ -11,8 +14,6 @@ Rails.application.routes.draw do
     post 'signin' => 'sessions#create'
 
   resources :donators
-
-  resources :inventories
 
   resources :categories
 end
