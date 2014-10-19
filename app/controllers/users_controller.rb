@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
   before_action :require_correct_user, only: [:edit, :update, :destroy]
-  # before_action :require_admin, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.all
+    case params[:filter]
+    when 'site_admin'
+      @users = User.admin_yes
+    when 'regular'
+      @users = User.admin_no
+    else
+      @users = User.all
+    end
   end
 
   def show

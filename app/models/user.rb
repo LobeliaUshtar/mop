@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   validates :address, presence: true
   validates :phone, presence: true
 
+  scope :admin_yes, -> { where(:admin => true) }
+  scope :admin_no, -> { where(:admin => false) }
+
   def self.authenticate(email, password)
     user = User.find_by(email: email)
     user && user.authenticate(password)

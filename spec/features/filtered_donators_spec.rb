@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Filtering donators" do
   before do
-    donator_yes = Donator.create!(donator_attributes(current: true))
-    donator_no = Donator.create!(donator_attributes(current: false))
+    @donator_yes = Donator.create!(donator_attributes(name: 'Gabby1', current: true))
+    @donator_no = Donator.create!(donator_attributes(name: 'Gabby2', current: false))
   end
 
   it "shows only the current donators" do
@@ -13,8 +13,8 @@ describe "Filtering donators" do
 
     expect(current_path).to eq("/donators")
 
-    expect(page).to have_text(donator_yes.name)
-    expect(page).not_to have_text(donator_no.name)
+    expect(page).to have_text(@donator_yes.name)
+    expect(page).not_to have_text(@donator_no.name)
   end
 
   context "while an admin" do
@@ -30,8 +30,8 @@ describe "Filtering donators" do
 
       expect(current_path).to eq("/donators/filter/all")
 
-      expect(page).to have_text(donator_yes.name)
-      expect(page).to have_text(donator_no.name)
+      expect(page).to have_text(@donator_yes.name)
+      expect(page).to have_text(@donator_no.name)
     end
 
     it "shows only the former donators" do
@@ -41,8 +41,8 @@ describe "Filtering donators" do
 
       expect(current_path).to eq("/donators/filter/former")
 
-      expect(page).not_to have_text(donator_yes.name)
-      expect(page).to have_text(donator_no.name)
+      expect(page).not_to have_text(@donator_yes.name)
+      expect(page).to have_text(@donator_no.name)
     end
   end
 end

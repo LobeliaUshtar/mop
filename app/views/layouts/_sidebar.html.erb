@@ -38,7 +38,9 @@
     <div class="panel panel-warning">
       <div class="panel-heading">Volunteers</div>
       <div class="panel-body">
-        <p><%= link_to "All Volunteers", users_path %></p>
+        <p><%= link_to "Our Volunteers", users_path %></p>
+        <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>
+        <p><%= link_to "Regulars", filtered_users_path(:regular) %></p>
         <p><%= link_to "Add New Volunteer", new_user_path %></p>
       </div>
     </div>
