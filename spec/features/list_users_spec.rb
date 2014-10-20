@@ -7,9 +7,9 @@ describe "Viewing the list of users" do
   end
 
   it "shows all the users" do
-    user1 = User.create!(user_attributes(name: "Larry", email: "larry@example.com"))
-    user2 = User.create!(user_attributes(name: "Moe",   email: "moe@example.com"))
-    user3 = User.create!(user_attributes(name: "Curly", email: "curly@example.com"))
+    user1 = User.create(user_attributes)
+    user2 = User.create(user_attributes)
+    user3 = User.create(user_attributes)
 
     sign_in(user1)
 

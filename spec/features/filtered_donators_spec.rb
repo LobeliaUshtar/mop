@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Filtering donators" do
   before do
-    @donator_yes = Donator.create!(donator_attributes(name: 'Gabby1', current: true))
-    @donator_no = Donator.create!(donator_attributes(name: 'Gabby2', current: false))
+    @donator_yes = Donator.create!(donator_attributes(current: true))
+    @donator_no = Donator.create!(donator_attributes(current: false))
   end
 
   it "shows only the current donators" do

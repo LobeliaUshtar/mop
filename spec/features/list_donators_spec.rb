@@ -3,9 +3,9 @@ require 'rails_helper'
 describe "Viewing the list of donators" do
   
   it "shows only current donators" do
-    donator1 = Donator.create(donator_attributes(name: 'Gabby1'))
-    donator2 = Donator.create(donator_attributes(name: 'Gabby2'))
-    donator3 = Donator.create(donator_attributes(name: 'Gabby3'))
+    donator1 = Donator.create(donator_attributes)
+    donator2 = Donator.create(donator_attributes)
+    donator3 = Donator.create(donator_attributes)
 
     visit donators_url
 
@@ -21,9 +21,9 @@ describe "Viewing the list of donators" do
   end
 
   it "does not show former donators" do
-    donator1 = Donator.create(donator_attributes(name: 'Gabby1'))
-    donator2 = Donator.create(donator_attributes(name: 'Gabby2'))
-    donator3 = Donator.create(donator_attributes(name: 'Gabby3', current: false))
+    donator1 = Donator.create(donator_attributes)
+    donator2 = Donator.create(donator_attributes)
+    donator3 = Donator.create(donator_attributes(current: false))
 
     visit donators_path
 

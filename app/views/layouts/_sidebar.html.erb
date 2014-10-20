@@ -13,16 +13,6 @@
   </div>
 
   <div class="panel panel-warning">
-    <div class="panel-heading">Events</div>
-    <div class="panel-body">
-      <p><%= link_to 'All Events', events_path %></p>
-      <% if current_user_admin? %>
-        <p><%= link_to "Add New Event", new_event_path %></p>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="panel panel-warning">
     <div class="panel-heading">Donators</div>
     <div class="panel-body">
       <p><%= link_to 'Our Donators', donators_path %></p>
@@ -30,6 +20,19 @@
         <p><%= link_to "All Recorded Donators", filtered_donators_path(:all) %></p>
         <p><%= link_to "Former Donators", filtered_donators_path(:former) %></p>
         <p><%= link_to "Add New Donator", new_donator_path %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-warning">
+    <div class="panel-heading">Events</div>
+    <div class="panel-body">
+      <p><%= link_to "Happening Now", events_path %></p>
+      <p><%= link_to "All Events", filtered_events_path(:all) %></p>
+      <p><%= link_to "Ended", filtered_events_path(:ended) %></p>
+      <p><%= link_to "Upcoming", filtered_events_path(:upcoming) %></p>
+      <% if current_user_admin? %>
+        <p><%= link_to "Add New Event", new_event_path %></p>
       <% end %>
     </div>
   </div>

@@ -1,16 +1,18 @@
 def event_attributes(overrides = {})
+  random_number = (0..9).to_a.shuffle[0..5].join
   {
-    title: "Test",
-    date_start: 1.day.from_now,
-    date_end: 2.day.from_now,
+    title: "Test #{random_number}",
+    date_start: 1.day.ago,
+    date_end: 2.days.from_now,
     details: "testing, test, test, test, test"
   }.merge(overrides)
 end
 
 def user_attributes(overrides = {})
+  random_number = (0..9).to_a.shuffle[0..5].join
   {
-    name: "Example User",
-    email: "user@example.com",
+    name: "Example User #{random_number}",
+    email: "user#{random_number}@example.com",
     password: "secret",
     password_confirmation: "secret",
     address: "123 ABC Street, ZYX, NJ, 55555",
@@ -28,8 +30,9 @@ def inventory_attributes(overrides = {})
 end
 
 def donator_attributes(overrides ={})
+  random_number = (0..9).to_a.shuffle[0..5].join
   {
-    name: "Gabby's Bagels",
+    name: "Gabby's Bagels #{random_number}",
     website: "www.gabby.com",
     email: "gabby@example.com",
     description: "blah blah blah blah blah",

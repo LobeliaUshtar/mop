@@ -6,7 +6,7 @@ describe "Navigating events" do
 
     visit event_url(event)
 
-    click_link "All Events"
+    click_link "Happening Now"
 
     expect(current_path).to eq(events_path)
   end

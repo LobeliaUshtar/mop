@@ -8,7 +8,7 @@ describe "An event" do
     expect(event.errors[:title].any?).to eq(true)
   end
 
-  it "requires a start date" do
+  it "requires a end date" do
     event = Event.new(date_start: "")
     
     expect(event.valid?).to eq(false)
@@ -36,11 +36,11 @@ describe "An event" do
   end
 
   it "returns current events ordered with the older event first" do
-    event1 = Event.create(event_attributes(date_start: 1.week.from_now))
-    event2 = Event.create(event_attributes(date_start: 2.week.from_now))
-    event3 = Event.create(event_attributes(date_end: 1.day.from_now))
+    event1 = Event.create(event_attributes(date_start: 1.week.ago,date_end: 1.week.from_now))
+    event2 = Event.create(event_attributes(date_start: 1.week.ago,date_end: 2.week.from_now))
+    event3 = Event.create(event_attributes(date_start: 2.week.ago,date_end: 1.day.from_now))
 
-    expect(Event.upcoming).to eq([event3, event1, event2])
+    expect(Event.happening_now).to eq([event3, event1, event2])
   end
 end
 
