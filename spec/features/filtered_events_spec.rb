@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe "Filtering events" do
   before do
-    @event_ended = Event.create!(event_attributes)
+    @event_ended = Event.create!(event_attributes(date_start: 2.weeks.ago, date_end: 1.week.ago))
     @event_now = Event.create!(event_attributes)
-    @event_upcoming = Event.create!(event_attributes)
+    @event_upcoming = Event.create!(event_attributes(date_start: 1.week.from_now, date_end: 2.weeks.from_now))
   end
 
   it "shows all events happening now" do
