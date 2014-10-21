@@ -1,51 +1,88 @@
-<div class='well'>
+<div class="panel-group" id="accordian">
 
-  <div class="panel panel-warning">
-    <div class="panel-heading">Inventory</div>
-    <div class="panel-body">
-      <p><%= link_to 'What We Need Most', inventories_path %></p>
-      <p><%= link_to "Entire Inventory", filtered_inventories_path(:all) %></p>
-      <% if current_user_admin? %>
-        <p><%= link_to "Add New Inventory", new_inventory_path %></p>
-        <p><%= link_to "Category List", categories_path %></p>
-      <% end %>
+  <div class="panel panel-warning" id="panel1">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne" class="collapsed">
+          Inventory
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><%= link_to 'What We Need Most', inventories_path %></p>
+        <p><%= link_to "Entire Inventory", filtered_inventories_path(:all) %></p>
+        <% if current_user_admin? %>
+          <p><%= link_to "Add New Inventory", new_inventory_path %></p>
+          <p><%= link_to "Category List", categories_path %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-warning" id="panel2">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwo" 
+           href="#collapseTwo" class="collapsed">
+          Donators
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><%= link_to 'Our Donators', donators_path %></p>
+        <% if current_user_admin? %>
+          <p><%= link_to "All Recorded Donators", filtered_donators_path(:all) %></p>
+          <p><%= link_to "Former Donators", filtered_donators_path(:former) %></p>
+          <p><%= link_to "Add New Donator", new_donator_path %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="panel panel-warning">
-    <div class="panel-heading">Donators</div>
-    <div class="panel-body">
-      <p><%= link_to 'Our Donators', donators_path %></p>
-      <% if current_user_admin? %>
-        <p><%= link_to "All Recorded Donators", filtered_donators_path(:all) %></p>
-        <p><%= link_to "Former Donators", filtered_donators_path(:former) %></p>
-        <p><%= link_to "Add New Donator", new_donator_path %></p>
-      <% end %>
+  <div class="panel panel-warning" id="panel3">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseThree" 
+           href="#collapseThree" class="collapsed">
+          Events
+        </a>
+      </h4>
     </div>
-  </div>
-
-  <div class="panel panel-warning">
-    <div class="panel-heading">Events</div>
-    <div class="panel-body">
-      <p><%= link_to "Happening Now", events_path %></p>
-      <p><%= link_to "All Events", filtered_events_path(:all) %></p>
-      <p><%= link_to "Ended", filtered_events_path(:ended) %></p>
-      <p><%= link_to "Upcoming", filtered_events_path(:upcoming) %></p>
-      <% if current_user_admin? %>
-        <p><%= link_to "Add New Event", new_event_path %></p>
-      <% end %>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><%= link_to "Happening Now", events_path %></p>
+        <p><%= link_to "All Events", filtered_events_path(:all) %></p>
+        <p><%= link_to "Ended", filtered_events_path(:ended) %></p>
+        <p><%= link_to "Upcoming", filtered_events_path(:upcoming) %></p>
+        <% if current_user_admin? %>
+          <p><%= link_to "Add New Event", new_event_path %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <% if current_user_admin? %>
-    <div class="panel panel-warning">
-      <div class="panel-heading">Volunteers</div>
-      <div class="panel-body">
-        <p><%= link_to "Our Volunteers", users_path %></p>
-        <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>
-        <p><%= link_to "Regulars", filtered_users_path(:regular) %></p>
-        <p><%= link_to "Add New Volunteer", new_user_path %></p>
+    <div class="panel panel-warning" id="panel4">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-target="#collapseFour" 
+             href="#collapseFour" class="collapsed">
+            Volunteers
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p><%= link_to "Our Volunteers", users_path %></p>
+          <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>
+          <p><%= link_to "Regulars", filtered_users_path(:regular) %></p>
+          <p><%= link_to "Add New Volunteer", new_user_path %></p>
+        </div>
       </div>
     </div>
   <% end %>
+
 </div>
