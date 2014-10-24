@@ -36,7 +36,7 @@ describe "An inventory" do
     end
 
     it "returns all inventory items with a count equal to or below 10" do
-      expect(Inventory.low).to eq([@inventory1, @inventory3, @inventory5])
+      expect(Inventory.low).to eq([@inventory3, @inventory5, @inventory1])
     end
   end
 end

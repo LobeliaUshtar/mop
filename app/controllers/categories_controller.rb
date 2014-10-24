@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    @category.name = params[:category][:name].titleize
     if @category.save
       flash[:notice] = "Category successfully created!"
       redirect_to @category
@@ -30,6 +31,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
+    @category.name = params[:category][:name].titleize
     if @category.update(category_params)
       flash[:notice] = "Category successfully updated!"
       redirect_to @category

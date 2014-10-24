@@ -11,9 +11,5 @@ class Inventory < ActiveRecord::Base
     message: "must be between 1 and 8"
   }
 
-  scope :low, -> { where('count <= 10').order(count: :desc) }
-  # def self.low
-  #   where('count <= 10').order(count: :desc)
-  # end
-  
+  scope :low, -> { where('count <= 10').order(count: :asc) }
 end

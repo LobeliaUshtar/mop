@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Thanks for signing up!"
+      flash[:notice] = "Thank you for wanting to volunteer with us. We will contact you shortly about when to come in and see how best you can help."
       redirect_to @user
     else
       render :new

@@ -23,6 +23,7 @@ class InventoriesController < ApplicationController
 
   def create
     @inventory = Inventory.new(inventory_params)
+    @inventory.name = params[:inventory][:name].titleize
     if @inventory.save
       flash[:notice] = "Yay for more in the pantry!"
       redirect_to @inventory
@@ -37,6 +38,7 @@ class InventoriesController < ApplicationController
 
   def update
     @inventory = Inventory.find(params[:id])
+    @inventory.name = params[:inventory][:name].titleize
     if @inventory.update(inventory_params)
       flash[:notice] = "Inventory successfully updated!"
       redirect_to @inventory

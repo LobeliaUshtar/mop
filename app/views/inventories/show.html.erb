@@ -21,6 +21,7 @@
     <% if current_user_admin? %>
       <%= link_to "Edit Inventory", edit_inventory_path(@inventory), class: 'btn btn-warning' %>
       <%= link_to "Delete Inventory", inventory_path(@inventory), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure you want to permanently delete your account?' } %>
+      <%= link_to "Add Another", new_inventory_path, class: 'btn btn-success' %>
     <% end %>
   </nav>
 </article>
