@@ -44,3 +44,12 @@ def donator_attributes(overrides ={})
     current: true
   }.merge(overrides)
 end
+
+def link_attributes(overrides ={})
+  random_number = (0..9).to_a.shuffle[0..5].join
+  {
+    name: "Church Church #{random_number}",
+    website: "www.ChurchChurch.org",
+    comments: "This is all that would describe this link.  Make sure is nice and long."
+  }.merge(overrides)
+end

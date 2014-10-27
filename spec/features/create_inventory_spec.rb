@@ -28,7 +28,7 @@ describe "Creating a new inventory" do
     fill_in "Name", with: "New Name"
     fill_in "Count", with: 30
     choose(@inventory.shop)
-    choose(@category1.name)
+    check(@category1.name)
      
     click_button 'Create'
 

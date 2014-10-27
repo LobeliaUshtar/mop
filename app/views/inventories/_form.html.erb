@@ -15,7 +15,7 @@
       <%= f.radio_button :shop, 8, label: "8", inline: true %>
     <% end %>
     <h5>Category</h5>
-    <%= f.collection_radio_buttons(:category_ids, Category.all, :id, :name, hide_label: true, inline: true) %>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, hide_label: true, inline: true) %>
     <% if @inventory.new_record? %>
       <%= f.submit "Create", class: 'btn btn-success' %>
     <% else %>

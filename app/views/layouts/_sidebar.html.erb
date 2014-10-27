@@ -64,17 +64,36 @@
     </div>
   </div>
 
+  <div class="panel panel-warning" id="panel4">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseFour" 
+           href="#collapseFour" class="collapsed">
+          Links
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><%= link_to "Our Links", links_path %></p>
+        <% if current_user_admin? %>
+          <p><%= link_to "Add New Link", new_link_path %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <% if current_user_admin? %>
-    <div class="panel panel-warning" id="panel4">
+    <div class="panel panel-warning" id="panel5">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-target="#collapseFour" 
-             href="#collapseFour" class="collapsed">
+          <a data-toggle="collapse" data-target="#collapseFive" 
+             href="#collapseFive" class="collapsed">
             Volunteers
           </a>
         </h4>
       </div>
-      <div id="collapseFour" class="panel-collapse collapse">
+      <div id="collapseFive" class="panel-collapse collapse">
         <div class="panel-body">
           <p><%= link_to "Our Volunteers", users_path %></p>
           <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>

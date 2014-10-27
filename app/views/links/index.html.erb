@@ -1,0 +1,15 @@
+<h1>Sites we hope you find useful.</h1>
+
+<% @links.each do |link| %>
+  <article>
+    <header>
+      <h2><%= link_to link.name, link %><h2>
+    </header>
+    <p>
+      <a href="<%= link.website %>" target="_blank"><%= link.website %></a>
+    </p>
+    <p>
+      <%= truncate(link.comments, length: 40, separator: ' ') %>
+    </p>
+  </article>
+<% end %>

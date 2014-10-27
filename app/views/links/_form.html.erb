@@ -1,0 +1,10 @@
+<%= bootstrap_form_for(@link) do |f| %>
+  <%= render "shared/errors", object: @link %>
+  <fieldset>
+    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :website %>
+    <%= f.text_area :comments, rows: 3 %>
+    <%= f.submit(class: 'btn btn-success') %>
+    <%= link_to "Cancel", links_path, class: 'btn btn-warning' %>
+  </fieldset>
+<% end %>

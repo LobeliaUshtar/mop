@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :donators
     get 'donators/filter/:filter' => 'donators#index', as: :filtered_donators
 
+  resources :links
+
   resources :events
     get 'events/filter/:filter' => 'events#index', as: :filtered_events
 
