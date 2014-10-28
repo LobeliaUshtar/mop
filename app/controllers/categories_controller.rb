@@ -51,5 +51,9 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit!
     end
+
+    def set_inventory
+      @inventory = Inventory.find_by!(slug: params[:id])
+    end
   # private end
 end

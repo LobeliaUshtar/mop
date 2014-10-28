@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "An event" do
+RSpec.describe Event, :type => :model do
   it "requires a title" do
     event = Event.new(title: "")
     
@@ -42,6 +42,26 @@ describe "An event" do
 
     expect(Event.happening_now).to eq([event3, event1, event2])
   end
-end
 
-  
+  it "generates a slug when it's created" do
+    event = Event.create!(event_attributes(title: "X-Men: The Last Stand"))
+
+    expect(event.slug).to eq("x-men-the-last-stand")
+  end
+
+  it "requires a unique title" do
+    event1 = Event.create!(event_attributes)
+
+    event2 = Event.new(title: event1.title)
+    event2.valid? # populates errors
+    expect(event2.errors[:title].first).to eq("has already been taken")
+  end
+
+  it "requires a unique slug" do
+    event1 = Event.create!(event_attributes)
+
+    event2 = Event.new(slug: event1.slug)
+    event2.valid? # populates errors
+    expect(event2.errors[:slug].first).to eq("has already been taken")
+  end
+end

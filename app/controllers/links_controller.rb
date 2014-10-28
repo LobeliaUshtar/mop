@@ -1,10 +1,14 @@
 class LinksController < ApplicationController
+  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
+
   def index
     @links = Link.all
   end
 
   def show
-    @link = Link.find(params[:id])
+    @link = Link.find_by!(slug: params[:id])
   end
 
   def new
@@ -45,6 +49,10 @@ class LinksController < ApplicationController
   private
     def link_params
       params.require(:link).permit!
+    end
+
+    def set_link
+      @link = Link.find_by!(slug: params[:id])
     end
   # private end
 end

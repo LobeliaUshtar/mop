@@ -1,4 +1,5 @@
 class InventoriesController < ApplicationController
+  before_action :set_inventory, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
   
@@ -13,7 +14,7 @@ class InventoriesController < ApplicationController
   end
 
   def show
-    @inventory = Inventory.find(params[:id])
+    @inventory = Inventory.find_by!(slug: params[:id])
     @categories = @inventory.categories
   end
 
@@ -57,6 +58,10 @@ class InventoriesController < ApplicationController
   private
     def inventory_params
       params.require(:inventory).permit!
+    end
+
+    def set_inventory
+      @inventory = Inventory.find_by!(slug: params[:id])
     end
   # private end
 end

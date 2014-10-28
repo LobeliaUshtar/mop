@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-describe "A user" do
-
+RSpec.describe User, :type => :model do
   it "requires a name" do
     user = User.new(name: "")
     
@@ -126,5 +125,27 @@ describe "authenticate" do
 
   it "returns the user if the email and password match" do
     expect(User.authenticate(@user.email, @user.password)).to eq(@user)
+  end
+
+  it "generates a slug when it's created" do
+    user = User.create!(user_attributes(name: "X-Men: The Last Stand"))
+
+    expect(user.slug).to eq("x-men-the-last-stand")
+  end
+
+  it "requires a unique name" do
+    user1 = User.create!(user_attributes)
+
+    user2 = User.new(name: user1.name)
+    user2.valid? # populates errors
+    expect(user2.errors[:name].first).to eq("has already been taken")
+  end
+
+  it "requires a unique slug" do
+    user1 = User.create!(user_attributes)
+
+    user2 = User.new(slug: user1.slug)
+    user2.valid? # populates errors
+    expect(user2.errors[:slug].first).to eq("has already been taken")
   end
 end

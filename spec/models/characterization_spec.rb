@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Link, :type => :model do
+RSpec.describe Characterization, :type => :model do
   
 end

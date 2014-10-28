@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
@@ -16,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by!(slug: params[:id])
   end
 
   def new
@@ -57,6 +58,10 @@ class EventsController < ApplicationController
   private
     def event_params
       params.require(:event).permit!
+    end
+
+    def set_event
+      @event = Event.find_by!(slug: params[:id])
     end
   # private end
 end

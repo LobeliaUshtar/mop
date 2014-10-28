@@ -1,4 +1,8 @@
 class DonatorsController < ApplicationController
+  before_action :set_donator, only: [:show, :edit, :update, :destroy]
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
+
   def index
     case params[:filter]
     when 'former'
@@ -11,7 +15,7 @@ class DonatorsController < ApplicationController
   end
 
   def show
-    @donator = Donator.find(params[:id])
+    @donator = Donator.find_by!(slug: params[:id])
   end
 
   def new
@@ -52,6 +56,10 @@ class DonatorsController < ApplicationController
   private
     def donator_params
       params.require(:donator).permit!
+    end
+
+    def set_donator
+      @donator = Donator.find_by!(slug: params[:id])
     end
   #private end
 end

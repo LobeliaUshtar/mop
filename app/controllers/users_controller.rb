@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:new, :create]
   before_action :require_correct_user, only: [:edit, :update, :destroy]
 
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by!(slug: params[:id])
   end
 
   def new
@@ -59,6 +60,10 @@ class UsersController < ApplicationController
     def require_correct_user
       @user = User.find(params[:id])
       redirect_to root_url unless current_user?(@user) || current_user_admin?
+    end
+
+    def set_user
+      @user = User.find_by!(slug: params[:id])
     end
   # private end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026131657) do
+ActiveRecord::Schema.define(version: 20141028194900) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141026131657) do
     t.boolean  "current",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "events", force: true do |t|
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20141026131657) do
     t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "inventories", force: true do |t|
@@ -59,6 +61,7 @@ ActiveRecord::Schema.define(version: 20141026131657) do
     t.integer  "shop"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "links", force: true do |t|
@@ -67,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141026131657) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "users", force: true do |t|
@@ -79,6 +83,7 @@ ActiveRecord::Schema.define(version: 20141026131657) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.boolean  "approved",        default: false
+    t.string   "slug"
   end
 
 end
