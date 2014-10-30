@@ -2,20 +2,12 @@
   <%= render "shared/errors", object: @inventory %>
   <fieldset>
     <%= f.text_field :name, autofocus: true %>
-    <%= f.number_field :count %>
-    <h5>Shop</h5>
-    <%= f.form_group :shop do %>
-      <%= f.radio_button :shop, 1, label: "1", inline: true %>
-      <%= f.radio_button :shop, 2, label: "2", inline: true %>
-      <%= f.radio_button :shop, 3, label: "3", inline: true %>
-      <%= f.radio_button :shop, 4, label: "4", inline: true %>
-      <%= f.radio_button :shop, 5, label: "5", inline: true %>
-      <%= f.radio_button :shop, 6, label: "6", inline: true %>
-      <%= f.radio_button :shop, 7, label: "7", inline: true %>
-      <%= f.radio_button :shop, 8, label: "8", inline: true %>
+    <%= f.text_field :pref_size, label: "Prefered Size" %>
+    <h5>Running low?</h5>
+    <%= f.form_group :running_low do %>
+      <%= f.radio_button :running_low, true, label: "Yes", inline: true %>
+      <%= f.radio_button :running_low, false, label: "No", inline: true %>
     <% end %>
-    <h5>Category</h5>
-    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, hide_label: true, inline: true) %>
     <% if @inventory.new_record? %>
       <%= f.submit "Create", class: 'btn btn-success' %>
     <% else %>

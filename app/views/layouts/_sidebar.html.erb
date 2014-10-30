@@ -15,7 +15,6 @@
         <p><%= link_to "Our Entire Inventory", filtered_inventories_path(:all) %></p>
         <% if current_user_admin? %>
           <p><%= link_to "Add New Inventory", new_inventory_path %></p>
-          <p><%= link_to "Category List", categories_path %></p>
         <% end %>
       </div>
     </div>

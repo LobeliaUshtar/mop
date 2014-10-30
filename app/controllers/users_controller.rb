@@ -14,9 +14,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find_by!(slug: params[:id])
-  end
+  def show; end
 
   def new
     @user = User.new
@@ -33,8 +31,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -63,7 +60,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.find_by!(slug: params[:id])
+      @user = User.find(params[:id])
     end
   # private end
 end

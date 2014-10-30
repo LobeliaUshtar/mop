@@ -27,7 +27,8 @@ Busy at work or in a hurry? Everything on our menu is available to go – just c
 7:00am-2:00pm. ($15 minimum)",
     logo_link: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c3.0.160.160/p160x160/1604883_832175216809407_22432134_n.png?oh=06fb00f643b1f8888ad0e3bf4e651e14&oe=54B13669&__gda__=1420545899_5f6e8a52e936c452124aa1ce59a62c1c",
     donation: "freshly frozen bagels",
-    current: true
+    current: true,
+    slug: "mt.-olive-bagels"
   },
   {
     name: "Weis Markets Flanders",
@@ -39,35 +40,7 @@ Busy at work or in a hurry? Everything on our menu is available to go – just c
     description: "",
     logo_link: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c66.66.828.828/s160x160/249192_10151672798460056_357771915_n.jpg?oh=17d9923ed2e78115eb70753f569a760b&oe=54F73589&__gda__=1422020481_fa7037e4da428758ac486e1ad5e994d8",
     donation: "day old store made bakery items (bread, rolls, pastries, etc.)",
-    current: true
+    current: true,
+    slug: "weis-markets-flanders"
   }
 ])
-
-Category.create!(name: 'Beans')
-Category.create!(name: 'Cereal')
-Category.create!(name: 'Condiments')
-Category.create!(name: 'Crackers')
-Category.create!(name: 'Dessert')
-Category.create!(name: 'Fish ~ Meats')
-Category.create!(name: 'Fruit')
-Category.create!(name: 'Jelly')
-Category.create!(name: 'Juice')
-Category.create!(name: 'Mac+Cheese ~ Canned Pasta')
-Category.create!(name: 'Pasta')
-Category.create!(name: 'Peanut Butter')
-Category.create!(name: 'Potatoes ~ Rice')
-Category.create!(name: 'Salad Dressing')
-Category.create!(name: 'Soup')
-Category.create!(name: 'Tea ~ Coffee')
-Category.create!(name: 'Tomato Products ~ Pasta Sauces')
-Category.create!(name: 'Vegetables')
-Category.create!(name: 'Baby Diapers')
-Category.create!(name: 'Baby Food')
-Category.create!(name: 'Dish Soap')
-Category.create!(name: 'Laundry Detergent')
-Category.create!(name: 'Napkins')
-Category.create!(name: 'Paper Towels')
-Category.create!(name: 'Personal Care')
-Category.create!(name: 'Tissues')
-Category.create!(name: 'Toilet Paper')
-Category.create!(name: 'SPECIAL')

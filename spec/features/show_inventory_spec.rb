@@ -7,7 +7,7 @@ describe "View a specific inventory" do
     visit inventory_url(inventory)
 
     expect(page).to have_text(inventory.name)
-    expect(page).to have_text(inventory.count)
-    expect(page).to have_text(inventory.shop)
+    expect(page).to have_text(inventory.pref_size)
+    expect(page).to have_text(inventory.running_low)
   end
 end

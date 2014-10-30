@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Filtering inventories" do
 
   it "shows only the low count inventory" do
-    inventory = Inventory.create!(inventory_attributes(count: 5))
+    inventory = Inventory.create!(inventory_attributes(running_low: true))
 
     visit inventories_url
 
@@ -15,7 +15,7 @@ describe "Filtering inventories" do
   end
 
   it "shows all inventories" do
-    inventory = Inventory.create!(inventory_attributes(count: 15))
+    inventory = Inventory.create!(inventory_attributes(running_low: false))
 
     visit inventories_url
 

@@ -4,17 +4,11 @@
   <header>
     <h1><%= @inventory.name %></h1>
     <p>
-      Current Count: <%= @inventory.count %>
+      Prefered Size: <%= @inventory.pref_size %>
     </p>
     <p>
-      Shop: <%= @inventory.shop %>
-    </p>
-    <p>
-      Category: 
-      <% @categories.each do |category| %>
-        <%= category.name %>
-      <% end %>
-    </p>      
+      Running Low?: <%= @inventory.running_low %>
+    </p>  
   </header>
   <br>
   <nav>

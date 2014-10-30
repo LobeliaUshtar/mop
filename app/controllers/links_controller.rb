@@ -7,9 +7,7 @@ class LinksController < ApplicationController
     @links = Link.all
   end
 
-  def show
-    @link = Link.find_by!(slug: params[:id])
-  end
+  def show; end
 
   def new
     @link = Link.new
@@ -25,12 +23,9 @@ class LinksController < ApplicationController
     end
   end
 
-  def edit
-    @link = Link.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @link = Link.find(params[:id])
     if @link.update(link_params)
       flash[:notice] = "Link successfully updated!"
       redirect_to @link
@@ -40,7 +35,6 @@ class LinksController < ApplicationController
   end
 
   def destroy
-    @link = Link.find(params[:id])
     @link.destroy
     flash[:notice] = "Link successfully deleted!"
     redirect_to links_url

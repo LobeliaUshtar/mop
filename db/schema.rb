@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028194900) do
-
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "characterizations", force: true do |t|
-    t.integer  "inventory_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "characterizations", ["category_id"], name: "index_characterizations_on_category_id"
-  add_index "characterizations", ["inventory_id"], name: "index_characterizations_on_inventory_id"
+ActiveRecord::Schema.define(version: 20141028194844) do
 
   create_table "donators", force: true do |t|
     t.string   "name"
@@ -57,8 +41,8 @@ ActiveRecord::Schema.define(version: 20141028194900) do
 
   create_table "inventories", force: true do |t|
     t.string   "name"
-    t.integer  "count"
-    t.integer  "shop"
+    t.string   "pref_size"
+    t.boolean  "running_low", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
@@ -83,7 +67,6 @@ ActiveRecord::Schema.define(version: 20141028194900) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.boolean  "approved",        default: false
-    t.string   "slug"
   end
 
 end

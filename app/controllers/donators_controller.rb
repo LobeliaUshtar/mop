@@ -14,9 +14,7 @@ class DonatorsController < ApplicationController
     end
   end
 
-  def show
-    @donator = Donator.find_by!(slug: params[:id])
-  end
+  def show; end
 
   def new
     @donator = Donator.new
@@ -32,12 +30,9 @@ class DonatorsController < ApplicationController
     end
   end
 
-  def edit
-    @donator = Donator.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @donator = Donator.find(params[:id])
     if @donator.update(donator_params)
       flash[:notice] = "Donator successfully updated!"
       redirect_to @donator
@@ -47,7 +42,6 @@ class DonatorsController < ApplicationController
   end
 
   def destroy
-    @donator = Donator.find(params[:id])
     @donator.destroy
     flash[:notice] = "Donator successfully deleted!"
     redirect_to donators_url

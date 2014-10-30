@@ -25,8 +25,8 @@ def inventory_attributes(overrides = {})
   random_number = (0..9).to_a.shuffle[0..5].join
   {
     name: "tomatoes #{random_number}",
-    count: 10,
-    shop: 3
+    pref_size: "10 count",
+    running_low: true
   }.merge(overrides)
 end
 

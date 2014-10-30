@@ -13,10 +13,7 @@ class InventoriesController < ApplicationController
     
   end
 
-  def show
-    @inventory = Inventory.find_by!(slug: params[:id])
-    @categories = @inventory.categories
-  end
+  def show; end
 
   def new
     @inventory = Inventory.new
@@ -33,12 +30,9 @@ class InventoriesController < ApplicationController
     end
   end
 
-  def edit
-    @inventory = Inventory.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @inventory = Inventory.find(params[:id])
     @inventory.name = params[:inventory][:name].titleize
     if @inventory.update(inventory_params)
       flash[:notice] = "Inventory successfully updated!"
@@ -49,7 +43,6 @@ class InventoriesController < ApplicationController
   end
 
   def destroy
-    @inventory = Inventory.find(params[:id])
     @inventory.destroy
     flash[:notice] = "Inventory successfully deleted!"
     redirect_to inventories_url
