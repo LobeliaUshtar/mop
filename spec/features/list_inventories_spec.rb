@@ -13,9 +13,6 @@ describe "Viewing the list of inventories" do
     expect(page).to have_text(inventory1.name)
     expect(page).to have_text(inventory2.name)
     expect(page).to have_text(inventory3.name)
-
-    expect(page).to have_text(inventory1.pref_size)
-    expect(page).to have_text(inventory1.running_low)
   end
 
   it "does not show an inventory that not running low" do
