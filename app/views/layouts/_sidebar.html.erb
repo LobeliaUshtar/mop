@@ -1,6 +1,6 @@
 <div class="panel-group" id="accordian">
 
-  <div class="panel panel-warning" id="panel1">
+  <div class="panel panel-success" id="panel1">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-target="#collapseOne" 
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="panel panel-warning" id="panel4">
+  <div class="panel panel-info" id="panel4">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-target="#collapseFour" 
@@ -82,8 +82,8 @@
     </div>
   </div>
 
-  <% if current_user_admin? %>
-    <div class="panel panel-warning" id="panel5">
+  <% if current_user_admin? || current_user %>
+    <div class="panel panel-danger" id="panel5">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-target="#collapseFive" 
@@ -97,7 +97,9 @@
           <p><%= link_to "Our Volunteers", users_path %></p>
           <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>
           <p><%= link_to "Regulars", filtered_users_path(:regular) %></p>
-          <p><%= link_to "Add New Volunteer", new_user_path %></p>
+          <% if current_user_admin? %>
+            <p><%= link_to "Add New Volunteer", new_user_path %></p>
+          <% end %>
         </div>
       </div>
     </div>
