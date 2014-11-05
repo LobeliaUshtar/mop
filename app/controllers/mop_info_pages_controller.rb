@@ -1,0 +1,2 @@
+class MopInfoPagesController < ApplicationController
+end

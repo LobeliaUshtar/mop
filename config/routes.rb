@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "inventories#index"
+  # root "mop_info_pages#front"
+  root "events#index"
 
   resources :inventories
     get 'inventories/filter/:filter' => 'inventories#index', as: :filtered_inventories
