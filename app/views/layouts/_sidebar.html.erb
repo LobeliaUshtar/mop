@@ -1,15 +1,30 @@
 <div class="panel-group" id="accordian">
 
-  <div class="panel panel-success" id="panel1">
+  <div class="panel panel-danger" id="panel1">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-target="#collapseOne" 
-           href="#collapseOne" class="collapsed">
+        <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
+          More about Us!
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <p><%= link_to 'Our Mission', mission_url %></p>
+        <p><%= link_to "Our Volunteers", volunteer_url %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-success" id="panel2">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" class="collapsed">
           Inventory
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse">
+    <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
         <p><%= link_to 'What We Need Most', inventories_path %></p>
         <p><%= link_to "Our Entire Inventory", filtered_inventories_path(:all) %></p>
@@ -20,16 +35,15 @@
     </div>
   </div>
   
-  <div class="panel panel-warning" id="panel2">
+  <div class="panel panel-warning" id="panel3">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-target="#collapseTwo" 
-           href="#collapseTwo" class="collapsed">
+        <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" class="collapsed">
           Donators
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
+    <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
         <p><%= link_to 'Our Donators', donators_path %></p>
         <% if current_user_admin? %>
@@ -41,16 +55,15 @@
     </div>
   </div>
 
-  <div class="panel panel-warning" id="panel3">
+  <div class="panel panel-warning" id="panel4">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-target="#collapseThree" 
-           href="#collapseThree" class="collapsed">
+        <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" class="collapsed">
           Events
         </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse">
+    <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
         <p><%= link_to "Happening Now", events_path %></p>
         <p><%= link_to "All Events", filtered_events_path(:all) %></p>
@@ -63,16 +76,15 @@
     </div>
   </div>
 
-  <div class="panel panel-info" id="panel4">
+  <div class="panel panel-info" id="panel5">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-target="#collapseFour" 
-           href="#collapseFour" class="collapsed">
+        <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" class="collapsed">
           Links
         </a>
       </h4>
     </div>
-    <div id="collapseFour" class="panel-collapse collapse">
+    <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
         <p><%= link_to "Our Links", links_path %></p>
         <% if current_user_admin? %>
@@ -83,16 +95,15 @@
   </div>
 
   <% if current_user_admin? || current_user %>
-    <div class="panel panel-danger" id="panel5">
+    <div class="panel panel-danger" id="panel6">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-target="#collapseFive" 
-             href="#collapseFive" class="collapsed">
+          <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" class="collapsed">
             Volunteers
           </a>
         </h4>
       </div>
-      <div id="collapseFive" class="panel-collapse collapse">
+      <div id="collapseSix" class="panel-collapse collapse">
         <div class="panel-body">
           <p><%= link_to "Our Volunteers", users_path %></p>
           <p><%= link_to "Site Admins", filtered_users_path(:site_admin) %></p>

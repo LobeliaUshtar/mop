@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # root "mop_info_pages#front"
-  root "events#index"
+  root 'mop_info_pages#mission'
+
+  get 'mission', to: 'mop_info_pages#mission'
+  get 'volunteer', to: 'mop_info_pages#volunteer'
 
   resources :inventories
     get 'inventories/filter/:filter' => 'inventories#index', as: :filtered_inventories
