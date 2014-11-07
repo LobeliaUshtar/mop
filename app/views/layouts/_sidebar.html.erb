@@ -4,7 +4,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
-          More about Us!
+          learn more about</br>Mount Olive Pantry
         </a>
       </h4>
     </div>
@@ -66,9 +66,9 @@
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
         <p><%= link_to "Happening Now", events_path %></p>
+        <p><%= link_to "Upcoming", filtered_events_path(:upcoming) %></p>
         <p><%= link_to "All Events", filtered_events_path(:all) %></p>
         <p><%= link_to "Ended", filtered_events_path(:ended) %></p>
-        <p><%= link_to "Upcoming", filtered_events_path(:upcoming) %></p>
         <% if current_user_admin? %>
           <p><%= link_to "Add New Event", new_event_path %></p>
         <% end %>
@@ -86,7 +86,7 @@
     </div>
     <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
-        <p><%= link_to "Our Links", links_path %></p>
+        <p><%= link_to "Useful Links", links_path %></p>
         <% if current_user_admin? %>
           <p><%= link_to "Add New Link", new_link_path %></p>
         <% end %>
