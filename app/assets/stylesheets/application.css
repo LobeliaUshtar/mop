@@ -20,6 +20,9 @@
  *= require donators
 */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -59,6 +62,7 @@ html, body {
 }
 
 #aside {
+  padding-left: 10px;
   float: right;
   width: 250px;
 }
@@ -69,9 +73,10 @@ html, body {
 
 .panel-heading a:after {
     font-family: 'Glyphicons Halflings';
-    content: "\e114";    
-    float: right; 
+    content: "\e114";
+    float: right;
 }
+
 .panel-heading a.collapsed:after {
     content: "\e080";
 }
