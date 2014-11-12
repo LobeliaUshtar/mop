@@ -7,6 +7,7 @@
     <%= f.password_field :password_confirmation, label: "Confirm Password" %>
     <%= f.text_field :address %>
     <%= f.text_field :phone, label: "Phone Number" %>
+    <%= f.text_area :availability_notes, label: "When are you available?" %>
     <% if current_user_admin? %>
       <%= f.check_box :admin, label: 'Admin?' %>
       <%= f.check_box :approved, label: 'Approved?' %>

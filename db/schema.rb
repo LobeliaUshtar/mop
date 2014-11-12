@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028194844) do
+ActiveRecord::Schema.define(version: 20141110174847) do
 
   create_table "donators", force: true do |t|
     t.string   "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20141028194844) do
   create_table "inventories", force: true do |t|
     t.string   "name"
     t.string   "pref_size"
-    t.boolean  "running_low", default: false
+    t.boolean  "running_low", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
@@ -65,8 +65,9 @@ ActiveRecord::Schema.define(version: 20141028194844) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           default: false
-    t.boolean  "approved",        default: false
+    t.boolean  "admin",              default: false
+    t.boolean  "approved",           default: false
+    t.text     "availability_notes"
   end
 
 end

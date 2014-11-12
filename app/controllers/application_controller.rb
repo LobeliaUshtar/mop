@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
       session[:intended_url] = request.url
     end
 
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
+    helper_method :current_user
+
     def require_signin
       unless current_user
         set_session_url
@@ -16,15 +21,15 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
-    helper_method :current_user
-
     def current_user?(user)
       current_user == user
     end
     helper_method :current_user?
+
+    def current_user_admin?  
+      current_user && current_user.admin?
+    end
+    helper_method :current_user_admin?
 
     def require_admin
       unless current_user_admin?
@@ -33,10 +38,5 @@ class ApplicationController < ActionController::Base
         redirect_to root_url
       end
     end
-
-    def current_user_admin?  
-      current_user && current_user.admin?
-    end
-    helper_method :current_user_admin?
   # private end
 end

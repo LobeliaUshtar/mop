@@ -22,6 +22,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "compass";
 
 @font-face {
   font-family: 'Glyphicons Halflings';
