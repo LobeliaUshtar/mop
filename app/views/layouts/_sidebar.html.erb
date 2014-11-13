@@ -12,6 +12,8 @@
       <div class="panel-body">
         <p><%= link_to 'Our Mission', mission_url %></p>
         <p><%= link_to "How Volunteers Help", volunteer_url %></p>
+        <p><%= link_to "This Month's Hours", hours_url %></p>
+          
       </div>
     </div>
   </div>
@@ -94,7 +96,7 @@
     </div>
   </div>
 
-  <% if current_user_admin? || current_user %>
+  <% if current_user_admin? || current_user_approved? %>
     <div class="panel panel-danger" id="panel6">
       <div class="panel-heading">
         <h4 class="panel-title">

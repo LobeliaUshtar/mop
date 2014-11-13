@@ -26,6 +26,11 @@ class ApplicationController < ActionController::Base
     end
     helper_method :current_user?
 
+    def current_user_approved?
+      current_user && current_user.approved?
+    end
+    helper_method :current_user_approved?
+
     def current_user_admin?  
       current_user && current_user.admin?
     end

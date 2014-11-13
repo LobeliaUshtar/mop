@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'mission', to: 'mop_info_pages#mission'
   get 'volunteer', to: 'mop_info_pages#volunteer'
+  get 'hours', to: 'mop_info_pages#hours'
 
   resources :inventories
     get 'inventories/filter/:filter' => 'inventories#index', as: :filtered_inventories
