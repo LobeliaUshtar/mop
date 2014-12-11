@@ -16,4 +16,5 @@
 //= require bootstrap.min
 //= require dropdown
 
-$('.dropdown-toggle').dropdown()
+$('.dropdown-toggle').dropdown();
+$("[name='my-checkbox']").bootstrapSwitch();
